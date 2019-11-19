@@ -1,11 +1,12 @@
 import React, { Component, lazy, Suspense } from 'react';
 import {httpClient} from '../../tools/HttpClient';
 import {appConfig} from "../../tools/AppConfig";
-// import Waiting from './../../Waiting/waiting';
+import Loader from './../../loader.js';
 import Header from './../Header/Header'
 import Footer from './../Footer/Footer'
 import { Link } from 'react-router-dom'
-
+import { Col, Container,  Row } from 'reactstrap';
+import leagueLogo from './../../assets/images/leagueLogo.jpg'
 class home extends Component {
   constructor(props){
     super(props);
@@ -15,10 +16,7 @@ class home extends Component {
     };
     this.requestLeagues =this.requestLeagues.bind(this);
     this.leaguesContent =this.leaguesContent.bind(this);
-    // this.RequestOneLeague =this.RequestOneLeague.bind(this);
     this.loadDefaultData ();
-
-    
   }
   loadDefaultData(){
     this.requestLeagues();
@@ -46,20 +44,25 @@ class home extends Component {
   }
   leaguesContent(){
     return(
-      <div className="allLeagues">
-        {/* {console.log(this.state.leagues)} */}
-        {
-          this.state.leagues.slice(0, 12).map((ele,index)=>{
-              // return <div className="league">
-              //     <div className="icon"></div>
-              //     <div className="info">
-              //       <h5>{ele.name}</h5>
-              //       <p></p>
-              //     </div>
-              // </div>
-              return <Link to={"/"+ele.id}>taniarascia</Link>
-         })
-        }
+      <div className="main">
+        <Container>
+          {
+            this.state.leagues!=0?
+              <div className="allLeagues">
+                {
+                  this.state.leagues.slice(0,24).map((ele,index)=>{
+                      return <Link to={"/"+ele.id} className="league">
+                              {console.log(ele)}
+                                <img src={leagueLogo}/>
+                                <p>{ele.name}</p>
+                            </Link>
+                })
+                }
+              </div>
+            :
+            <Loader></Loader>
+          }
+        </Container>
       </div>
     )
   }

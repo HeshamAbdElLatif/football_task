@@ -1,6 +1,6 @@
 import React, { Component, lazy, Suspense } from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './assets/style.scss';
 import {
   BrowserRouter as Router,
   Switch,

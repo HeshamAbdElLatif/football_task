@@ -1,11 +1,84 @@
-.allLeagues{
-    display: flex;
-    flex-direction: column;
-    .league{
-      width: 100%;
-      height: 100px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+//mixins
+//media mixin
+@mixin m($width) {
+  @media(max-width:#{$width}px) {
+      @content;
   }
+}
+// Lang mixin
+@mixin en {
+  html[dir="ltr"] & {
+      @content;
+  }
+}
+@mixin ar {
+  html[dir="rtl"] & {
+      @content;
+  }
+}
+// how to use mixin
+// @include en {
+//     font-family: Sans;
+// }
+// @include m(600) {
+//     margin:0;
+// }
+body{
+  position: relative;
+}
+.waitingComponent{
+  text-align: center;
+}
+.main{
+  padding: 50px 0;
+  min-height: 100vh;
+}
+footer{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  height: 40px;
+  line-height: 38px;
+  p{
+    margin: 0;
+  }
+}
+header{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  height: 50px;
+  line-height: 48px;
+  p{
+    border: 1px solid #fff;
+    width: 60px;
+    height: 40px;
+    text-align: center;
+    line-height: 38px;
+    margin-top: 5px;
+  }
+}
+.allLeagues{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  .league{
+    width: 300px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.league img{
+  width: 100px;
+  height: 100px;
+}

@@ -1,5 +1,4 @@
 import React from 'react';
-import './Header.scss';
 import { Col, Container,  Row } from 'reactstrap';
 
 const Header = (props) => {

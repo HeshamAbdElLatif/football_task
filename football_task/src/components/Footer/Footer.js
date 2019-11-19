@@ -1,11 +1,16 @@
 import React from 'react';
-import './Footer.scss';
+import { Col, Container,  Row } from 'reactstrap';
 
 const Footer = (props) => {
     return (
-        <div>
-            <p>Footer</p>
-        </div> 
+        <footer>
+            <Container>
+                <p>
+                    All Rights Reserved.
+                </p>
+            </Container>
+        </footer>
+        
     );
 }
 
