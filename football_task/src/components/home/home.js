@@ -46,12 +46,13 @@ class home extends Component {
     return(
       <div className="main">
         <Container>
+          <h3 className="pageTitle">Football Leagues</h3>
           {
             this.state.leagues!=0?
               <div className="allLeagues">
                 {
-                  this.state.leagues.slice(0,24).map((ele,index)=>{
-                      return <Link to={"/"+ele.id} className="league">
+                  this.state.leagues.slice(100,124).map((ele,index)=>{
+                      return <Link to= {`${ele.id}`} className="league" >
                               {console.log(ele)}
                                 <img src={leagueLogo}/>
                                 <p>{ele.name}</p>

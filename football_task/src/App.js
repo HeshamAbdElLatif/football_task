@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import HomePage from './components/home/home'
 import Clubs from './components/clubs/clubs'
+import Team from './components/team/team'
 
 class App extends Component {
  
@@ -20,7 +21,8 @@ class App extends Component {
       <div>
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route path="/:id" component={Clubs} />
+          <Route exact path={`/:leagueId`} component={Clubs} />
+          <Route exact path={`/:leagueId/:teamId`} component={Team} />
         </Switch>
       </div>
     </Router>
