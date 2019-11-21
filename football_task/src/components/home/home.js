@@ -34,7 +34,6 @@ class home extends Component {
         "competitions",
         config,
         (resp) => {
-          console.log(resp)
           this.setState({leagues: resp.data.competitions});
         },
         (error) => {
@@ -53,7 +52,6 @@ class home extends Component {
                 {
                   this.state.leagues.slice(100,124).map((ele,index)=>{
                       return <Link to= {`${ele.id}`} className="league" >
-                              {console.log(ele)}
                                 <img src={leagueLogo}/>
                                 <p>{ele.name}</p>
                             </Link>

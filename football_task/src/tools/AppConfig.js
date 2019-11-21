@@ -1,7 +1,7 @@
 class AppConfig {
 
     getServerUrl() {
-        return "http://api.football-data.org/v2/";
+        return "https://api.football-data.org/v2/";
     }
 }
 

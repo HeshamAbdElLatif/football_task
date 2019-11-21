@@ -38,7 +38,6 @@ class team extends Component {
         "teams/" +lastURLSegment,
         config,
         (resp) => {
-          console.log(resp)
           this.setState({teamData: resp.data});
         },
         (error) => {
@@ -61,7 +60,6 @@ class team extends Component {
         "teams/" +lastURLSegment+"/matches",
         config,
         (resp) => {
-          console.log(resp)
           this.setState({matches: resp.data.matches});
         },
         (error) => {

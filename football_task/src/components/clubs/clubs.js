@@ -39,7 +39,6 @@ class clubs extends Component {
         "competitions" +window.location.pathname ,
         config,
         (resp) => {
-          console.log(resp)
           this.setState({league: resp.data});
         },
         (error) => {
@@ -60,7 +59,6 @@ class clubs extends Component {
         "competitions" +window.location.pathname+"/teams" ,
         config,
         (resp) => {
-          console.log(resp)
           this.setState({teams: resp.data.teams});
         },
         (error) => {
